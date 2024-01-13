@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text using Gemini Vision Pro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        #chat-container {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        .message {
+            margin: 5px;
+        }
+
+        .user-message {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .chatbot-message {
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+        .input-group {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Image to Text using Gemini Vision Pro 
+                    </div>
+                    <div id="chat-container" class="card-body">
+                        <!-- Chat messages will be displayed here -->
+                        <div class="message user-message">{{user_input}}</div>
+                        <!-- Example chatbot response -->
+                        <div class="message chatbot-message">{{generate}}</div>
+                    </div>
+                    <div class="card-footer">
+                        <form method="post" id="chat-form" enctype="multipart/form-data">
+                            <div class="input-group">
+                                <input type="text" id="user-input" class="form-control" name="content" placeholder="Type your message...">
+                                
+                                <!-- Image upload input -->
+                                <input type="file" id="image-input" class="form-control" name="image" accept="image/*">
+                                
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
